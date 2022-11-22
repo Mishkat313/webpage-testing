@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Verdana, Helvetica, sans-serif;
+      margin: 0;
+      width: 100vw; 
+      height: 100vh;
+    }
+
+    .header {
+      padding: 250px;
+      border: 5px solid #1abc9c;
+      background: whitesmoke no-repeat center;
+      background-image: url("./gunisar1.jpeg");
+      background-size: 1900px 800px;
+      z-index: 2;
+      text-decoration: none;
+      text-align: center;
+      color: whitesmoke;
+
+    }
+
+    .header h1 {
+      font-size: 55px;
+    }
+
+    .navbar {
+      width: 100%;
+      background: #1abc9c url("./Logo.jpg") no-repeat left;
+      background-size: 20%;
+      overflow: auto;
+      height: 11%;
+      position: fixed;
+      z-index: 2;
+      box-shadow: 0px 10px 10px lightblue;
+    }
+
+    .navbar a {
+      float: right;
+      padding-top: 30px;
+      padding-right: 10px;
+      padding-bottom: 30px;
+      padding-left: 10px;
+      margin: 2px;
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .navbar a.right {
+      float: right;
+    }
+
+    .navbar a:hover {
+      background-color: #e8f8fb;
+      color: black;
+    }
+
+    .active {
+      background-color: #04AA6D;
+    }
+
+    .main {
+      background-color: #e8f8fb;
+      max-width: fit-content;
+      width: 100%;
+      padding: 20px;
+      position: relative;
+      margin: 0px 5px 0px 5px;
+    }
+ 
+    .main h2 {
+      font-size: 30px
+    }
+
+    .about-wrap {
+      width: 100%;
+      padding: 120px;
+      background: #E7EEF5;
+      border-radius: 20px;
+      display: flex;
+    }
+
+    .about-wrap .about-profile {
+      width: 30%;
+    }
+
+    .about-wrap .about-profile .image-section {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .about-wrap .about-profile h3 {
+      font-size: 21px;
+      font-weight: 500;
+      line-height: 26px;
+      margin: 0px;
+      color: #000;
+    }
+
+    .about-wrap .about-profile p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      margin: 6px 0px 0px 0px;
+      color: #000;
+    }
+
+    .about-wrap .detail-section {
+      width: 70%;
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 60px;
+      align-items: flex-start;
+    }
+
+    .about-wrap .detail-section .detail-box {
+      width: 100%;
+      padding: 44px 30px;
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .about-wrap .detail-section p {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 26px;
+      margin: 0;
+      font-family: Verdana, Helvetica, sans-serif;
+    }
+
+    .about-wrap .detail-section .full-width {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .about-wrap .detail-section .full-width .half-box {
+      width: 48%;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 10px;
+    }
+    .our-work {
+      width: 100%;
+      padding: 40px;
+      background: white;
+      border-radius: 20px;
+      display: flex;
+      
+    }
+    .our-work .our-values {
+      width: 50%;
+      
+    }
+    .our-work .our-values p{
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 26px;
+      margin: 0;
+      font-family: Verdana, Helvetica, sans-serif;
+    }
+    .button {
+      background-color: #1abc9c;
+      border: 2px solid #88edff;
+      border-radius: 50px;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+}
+.button:hover {
+  border-color: #fff;
+}
+    .our-work .card-section{
+      width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 60px;
+      justify-content: space-between;
+      border-left: 2px solid #1abc9c;
+    }
+    .our-work .card-section .card-box-header{
+      color: #1abc9c;
+      margin-bottom: 20px;
+      height: 20px;
+      width: 100%;
+      text-align: center;
+
+    }
+    .our-work .card-section .card-box{
+      padding: 5px;
+      background: #ffe4ee;
+      border: 3px solid #e8f8fb;
+      border-radius: 20px;
+      width:45%;
+      text-align: center;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      cursor: pointer;
+      transition: .8s;
+    }
+    .our-work .our-values p{
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 26px;
+      margin: 0;
+      font-family: Verdana, Helvetica, sans-serif;
+    }
+    .our-work .card-section .card-box:hover {
+      border-color: #1abc9c;
+    }
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 600px;
+      position: relative;
+      margin: auto;
+      background-color: dodgerblue;
+      border: 10px green
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: rgb(206, 203, 203);
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(247, 247, 247, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: rgb(68, 59, 59);
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @media screen and (max-width: 500px) {
+      .navbar a {
+        float: none;
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <a class="active" href="#"><i class="fa fa-fw fa-home"></i></a>
+    <a href="#"><i class="fa fa-group"></i> ABOUT</a>
+    <a href="#"><i class="fa fa-fw fa-envelope"></i> CONTACT</a>
+    <a href="#"><i class="fa fa-gears"></i> WHAT WE DO</a>
+    <a href="#"><i class="fa fa-map-signs"></i> OUR JOURNEY</a>
+    <a class="right" href="#"><i class="fa fa-handshake-o"></i> DONATE</a>
+  </div>
+
+
+  <div class="header">
+    <h1> <span style="font-family:Verdana, Helvetica, sans-serif;">Welcome to</span> <span
+        style="font-family: Verdana, Helvetica, sans-serif; color: #1abc9c;">Dream Basant </span> </h1>
+  </div>
+  <hr>
+  <div class="main">
+    <h2 style="border-left: 6px solid #1abc9c;margin:30px;text-align:left;"> About Us</h2>
+    <div class="about-wrap">
+      <div class="about-profile">
+        <div class="image-section"> <img src="./teachers day.jpeg" alt="Kids" style="width:100%; border-radius: 20px;">
+        </div>
+        
+        <h3> <i>We are the <ins>Dreamers</ins>, We are from <ins>Basant</ins></i>.</h3>
+      </div>
+      <div class="detail-section">
+        <div class="detail-box">
+          <p>Basant is a small village in the district of Darbhanga, Bihar. 
+            Dream Basant Trust is a non profit organization which came into existence by Allah's grace on January 2016 by the view of youths of the village.
+            We normally reside away from Basant (for our education and careers) and see the village once or twice in a year. We dreamt
+            to do something beneficial for our village, and to do the same we came together and created a
+            small organization named DREAM BASANT.
+          </p>
+          
+        </div>
+        <div class="full-width">
+          <div class="half-box">
+            <p>
+              The education for the youth of Basant is not which is confined in books, but the 360<sup>o</sup> view of life. 
+              We got distant from our village but our 360<sup>o</sup> view is always with us. The mission for us is to develop our village Basant in such a way that it becomes an exemplary village in India.
+            </p>
+          </div>
+          <div class="half-box">
+            <p>We have the team of 32 people from students to working professionals from different fields which brings
+              different expertise on the platform. With the help and support of the whole village we try to help the needy, spark enthusiasm among children to excel in education and support in the on
+              going projects for mosques and qabristan. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="main">
+    <h2 style="border-left: 6px solid #1abc9c;margin:30px;text-align:left;">What We Do</h2>
+    <div class="our-work">
+      <div class="our-values">
+        <h3 style="color:#1abc9c; text-align: center;">Our Values</h3>
+      <p>We strive to convey the message of Islam to fellow citizens of basant and reconstruct the society by developing and reforming all collective institutions.
+ <ul style="font-size: 20px;font-weight: 500;line-height: 26px;margin: 0;font-family: Verdana, Helvetica, sans-serif;">
+       <li> Halal Path - We are bound by the highest standards of morals and ethics in all our programs and activities as per shariah.</li> 
+       <li> Ideas - We beleive in Ideas that is shared by each member of the organization after thorogh discussions. </li>
+       <li> Team Work - We find solutions and implement with team work.  </li>
+       <li> Trust - We are committed to the service of humanity without any discrimination </li>
+ </ul>
+ <a href="#" class="button">Know More</a>
+      </div>
+
+
+
+
+      <div class="card-section">
+        <div class="card-box-header"> <h3>Our Participation </h3> </div>
+<div class="card-box">
+  <div class="image-section ">
+    <img src="./edu-hat.png" alt="Kids" style="width:30%; border-radius: 20px;">
+  </div>
+Educational Activities
+</div>
+<div class="card-box">
+  <div class="image-section">
+    <img src="./Mosque-icon-PNG.png" alt="Kids" style="width:30%; border-radius: 20px;">
+  </div>
+Spiritual Infra Development
+</div>
+<div class="card-box">
+  <div class="image-section ">
+    <img src="./charity.png" alt="Kids" style="width:24%; border-radius: 20px;">
+  </div>
+Support the Needy
+</div>
+<div class="card-box">
+  <div class="image-section ">
+    <img src="./community-12.png" alt="Kids" style="width:28%; border-radius: 20px;">
+  </div>
+Community Work
+</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="main">
+    <h2 style="border-left: 6px solid #1abc9c;margin:30px;text-align:left;">Our Journey</h2>
+    <p> We are the Dreamers and We are from Basant. </p>
+  </div>
+  <hr>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src=".\FB_IMG_1642858559690.jpg" style="width:100%">
+      <div class="text">Little CHamps</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="./FB_IMG_1642858555324.jpg" style="width:100%">
+      <div class="text">Little CHamps</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="FB_IMG_1642858564765.jpg" style="width:100%">
+      <div class="text">Little CHamps</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+
+
+  </script>
+</body>
+
+</html>
